@@ -40,8 +40,8 @@ if __name__ == "__main__":
         log.write(timestamp + "La conexión SFTP se estableció correctamente\n")
         # Transferencia de archivo
         sftp_client.get(
-            remote_path + filename,  # Path de host
-            local_path + filename,  # Path de receptor
+            remote_path + remote_filename,  # Path de host
+            local_path + local_filename,  # Path de receptor
         )
 
         log.write(timestamp + "El backup se copió existosamente\n")
