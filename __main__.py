@@ -4,7 +4,7 @@ from settings import *
 
 if __name__ == "__main__":
 
-    # basic logging config
+    # Set log file
     log = open("logs/log_"+date+".log", "w")
     log.write(timestamp + "Iniciando copía\n")
     log.write(timestamp + "Fecha: " + date + "\n")
