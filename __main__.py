@@ -45,7 +45,7 @@ if __name__ == "__main__":
         )
 
         log.write(timestamp + "El backup se copió existosamente\n")
-        log.write(timestamp + "Info: \n\tArchivo remoto: "+ remote_path + filename + "\n\tArchivo local: " + local_path+filename+ "\n")
+        log.write(timestamp + "Info: \n\tArchivo remoto: "+ remote_path + remote_filename + "\n\tArchivo local: " + local_path+local_filename+ "\n")
         sftp_client.close()  # Cierre de sesión SFTP
         log.write(timestamp + "Sesión finalizada\n")
 
