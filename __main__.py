@@ -13,7 +13,7 @@ if __name__ == "__main__":
         client = paramiko.SSHClient()  # Declaracion de paramiko
         client.set_missing_host_key_policy(paramiko.AutoAddPolicy())  # Establecimiento de politicas de host
 
-        client.connect(conection["host"], username=conection["user_ssh"], password=conection["passwd_ssh"])  # Establecimiento de conexión SSH
+        client.connect(conection["host"], username=conection["user_ssh"], password=conection["passwd_ssh"], key_filename=private_key_path)  # Establecimiento de conexión SSH
         log.write(timestamp + "La conexión SSH se estableció correctamente\n")
 
         # Inicio de sesión SSH mediante Canal
@@ -24,7 +24,7 @@ if __name__ == "__main__":
             log.write(timestamp + "Se han otorgado los permisos correctamente\n")
             client.close()  # Cierre de la conexion SSH
             log.write(timestamp + "La conexión SSH ha finalizado\n")
-            client.connect(conection["host"], username=conection["user_ftp"], password=conection["passwd_ftp"])  # Establecimiento de conexión SFTP
+            client.connect(conection["host"], username=conection["user_ftp"], password=conection["passwd_ftp"], key_filename=private_key_path)  # Establecimiento de conexión SFTP
 
         # Inicio de sesión SFTP
         sftp_client = client.open_sftp()

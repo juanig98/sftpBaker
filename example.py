@@ -23,6 +23,9 @@ remote_filename = 'filename'
 # Nombre del archivo local
 local_filename = 'filename'
 
+# Path a private key
+private_key_path = ""
+
 # Credenciales de acceso 
 conection = {
     'host': 'hots',
