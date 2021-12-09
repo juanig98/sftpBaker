@@ -10,10 +10,10 @@ if __name__ == "__main__":
     log.write(timestamp + "Fecha: " + date + "\n")
 
     try:
+        client = paramiko.SSHClient()  # Declaracion de paramiko
+        client.set_missing_host_key_policy(paramiko.AutoAddPolicy())  # Establecimiento de politicas de host
+        
         if require_assign_permission:
-            client = paramiko.SSHClient()  # Declaracion de paramiko
-            client.set_missing_host_key_policy(paramiko.AutoAddPolicy())  # Establecimiento de politicas de host
-
             client.connect(conection["host"], username=conection["user_ssh"], password=conection["passwd_ssh"], key_filename=private_key_path)  # Establecimiento de conexión SSH
             log.write(timestamp + "La conexión SSH se estableció correctamente\n")
 
