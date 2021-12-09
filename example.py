@@ -11,6 +11,12 @@ day = days_of_week_spanish[days_of_week.index(time.strftime('%A'))]
 # Hora de copia
 hour = '21h00m'
 
+# Control de asignación de permisos
+require_assign_permission = False
+
+# Localización de los logs
+logs_path = '/path/folder/logs'
+
 # Localización del backup remoto
 remote_path = '/path/folder/server'
 
