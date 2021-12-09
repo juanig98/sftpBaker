@@ -25,7 +25,9 @@ if __name__ == "__main__":
                 log.write(timestamp + "Se han otorgado los permisos correctamente\n")
                 client.close()  # Cierre de la conexion SSH
                 log.write(timestamp + "La conexión SSH ha finalizado\n")
-                client.connect(conection["host"], username=conection["user_ftp"], password=conection["passwd_ftp"], key_filename=private_key_path)  # Establecimiento de conexión SFTP
+        
+        log.write(timestamp + "Iniciando conexión SFTP\n")
+        client.connect(conection["host"], username=conection["user_ftp"], password=conection["passwd_ftp"], key_filename=private_key_path)  # Establecimiento de conexión SFTP
 
         # Inicio de sesión SFTP
         sftp_client = client.open_sftp()
